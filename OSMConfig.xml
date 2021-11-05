@@ -22,8 +22,8 @@
 		<param name="outputCoordinateSystem" value="EPSG:31370" />
 		<!-- CSV file containing the full geometry (including start end end node) for each link.
 		This file can be used for visualization purposes in Simunto Via or GIS software. -->
-		<param name="outputDetailedLinkGeometryFile" value="C:\Users\jingli\OneDrive - Vrije Universiteit Brussel\Documents\1MATSimNewAll\BrusselsPT2MATSim\scenario\multimodalNetwork\geoFile_test.xml" />
-		<param name="outputNetworkFile" value="C:\Users\jingli\OneDrive - Vrije Universiteit Brussel\Documents\1MATSimNewAll\BrusselsPT2MATSim\scenario\multimodalNetwork\multimodalNetwork_test.xml" />
+		<param name="outputDetailedLinkGeometryFile" value="C:\Users\jingli\OneDrive - Vrije Universiteit Brussel\Documents\1MATSimNewAll\BrusselsPT2MATSim\scenario\multimodalNetwork\geoFile.xml" />
+		<param name="outputNetworkFile" value="C:\Users\jingli\OneDrive - Vrije Universiteit Brussel\Documents\1MATSimNewAll\BrusselsPT2MATSim\scenario\multimodalNetwork\multimodalNetwork.xml" />
 		<!-- In case the speed limit allowed does not represent the speed a vehicle can actually realize, 
 		e.g. by constrains of traffic lights not explicitly modeled, a kind of "average simulated speed" can be used.
 		Defaults to false. Set true to scale the speed limit down by the value specified by the wayDefaultParams) -->
