@@ -24,9 +24,8 @@ import org.matsim.pt2matsim.osm.lib.*;
 import org.matsim.pt2matsim.tools.NetworkTools;
 
 /**
- * Run this class to create a multimodal MATSim network from OSM.
- *
- * @author polettif
+ * The prepared Brussels OSM and boundary files are in the folder "scenario/preprocessing"
+ * Run this class with the argument "OSMConfig.xml"
  */
 public final class Osm2MultimodalNetwork {
 
@@ -34,8 +33,11 @@ public final class Osm2MultimodalNetwork {
 	}
 
 	/**
-	 * The prepared OSM and boundary files are in the folder "scenario/preprocessing"
-	 * Run this class with the argument "OSMConfig.xml"
+	 * Converts an osm file to a MATSim network. The input and output file as well
+	 * as conversion parameters are defined in this file. Run {@link CreateDefaultOsmConfig}
+	 * to create a default config.
+	 *
+	 * @param args [0] the config.xml file<br/>
 	 */
 	public static void main(String[] args) {
 		if(args.length == 1) {
