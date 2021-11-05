@@ -34,11 +34,8 @@ public final class Osm2MultimodalNetwork {
 	}
 
 	/**
-	 * Converts an osm file to a MATSim network. The input and output file as well
-	 * as conversion parameters are defined in this file. Run {@link CreateDefaultOsmConfig}
-	 * to create a default config.
-	 *
-	 * @param args [0] the config.xml file<br/>
+	 * The prepared OSM and boundary files are in the folder "scenario/preprocessing"
+	 * Run this class with the argument "OSMConfig.xml"
 	 */
 	public static void main(String[] args) {
 		if(args.length == 1) {
