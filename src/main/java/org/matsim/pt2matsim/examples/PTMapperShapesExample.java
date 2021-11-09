@@ -10,7 +10,7 @@ import org.matsim.pt2matsim.mapping.PTMapper;
 import org.matsim.pt2matsim.mapping.networkRouter.ScheduleRoutersFactory;
 import org.matsim.pt2matsim.mapping.networkRouter.ScheduleRoutersGtfsShapes;
 import org.matsim.pt2matsim.plausibility.MappingAnalysis;
-import org.matsim.pt2matsim.run.CheckMappedSchedulePlausibility;
+import org.matsim.pt2matsim.run.Step4_CheckMappedSchedulePlausibility;
 import org.matsim.pt2matsim.tools.GtfsTools;
 import org.matsim.pt2matsim.tools.NetworkTools;
 import org.matsim.pt2matsim.tools.ScheduleTools;
@@ -129,7 +129,7 @@ public class PTMapperShapesExample {
 
 	private static void checkPlausibility() {
 		new File(outputFolder + "plausibility/").mkdir();
-		CheckMappedSchedulePlausibility.run(scheduleOutput1, networkOutput1, coordSys, outputFolder + "plausibility/");
+		Step4_CheckMappedSchedulePlausibility.run(scheduleOutput1, networkOutput1, coordSys, outputFolder + "plausibility/");
 	}
 
 	public static void writeGtfsShapes() {

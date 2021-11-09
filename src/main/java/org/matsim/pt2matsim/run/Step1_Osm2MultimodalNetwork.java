@@ -27,9 +27,9 @@ import org.matsim.pt2matsim.tools.NetworkTools;
  * The prepared Brussels OSM and boundary files are in the folder "scenario/preprocessing"
  * Run this class with the argument "OSMConfig.xml"
  */
-public final class Osm2MultimodalNetwork {
+public final class Step1_Osm2MultimodalNetwork {
 
-	private Osm2MultimodalNetwork() {
+	private Step1_Osm2MultimodalNetwork() {
 	}
 
 	/**

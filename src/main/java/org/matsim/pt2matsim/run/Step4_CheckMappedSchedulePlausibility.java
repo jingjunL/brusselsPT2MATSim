@@ -33,9 +33,19 @@ import org.matsim.pt2matsim.tools.ScheduleTools;
 import java.io.File;
 
 /**
- * @author polettif
+ * Arguments running this class:
+ * "C:\Users\jingli\OneDrive - Vrije Universiteit Brussel\Documents\1MATSimNewAll\BrusselsPT2MATSim\scenario\mappedOutput\ptSchedule.xml" "C:\Users\jingli\OneDrive - Vrije Universiteit Brussel\Documents\1MATSimNewAll\BrusselsPT2MATSim\scenario\mappedOutput\network.xml" EPSG:31370 "C:\Users\jingli\OneDrive - Vrije Universiteit Brussel\Documents\1MATSimNewAll\BrusselsPT2MATSim\scenario\plausibilityCheck"
+ *
+ * Results:
+ * ===============================================================
+ * > Plausibility check for 4704 transit routes finished.
+ * > 295 	 artificial links
+ * > 59 	 loop warnings
+ * > 82 	 direction change warnings
+ * > 10 	 travel time warnings
+ * ===============================================================
  */
-public final class CheckMappedSchedulePlausibility {
+public final class Step4_CheckMappedSchedulePlausibility {
 
 	protected static final Logger log = Logger.getLogger(PlausibilityCheck.class);
 

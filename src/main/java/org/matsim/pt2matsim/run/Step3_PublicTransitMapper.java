@@ -33,19 +33,29 @@ import org.matsim.pt2matsim.tools.ScheduleTools;
 import java.util.Collections;
 
 /**
- * Allows to run an implementation
- * of public transit mapping via config file path.
+ * Argument needed the run this class: PTMapperConfig.xml
+ * Some important changes in the config here compared to the default config:
+ * 1) ScheduleFreespeedMode:
+ * 			the three pt modes in Brussels are bus, subway and tram. For the subway and tram meeting their schedule, change the freespeed of their specific link
+ * 			to the speed that can meet the schedule (as the link they are operating on only has one mode, i.e. only subway operates on subway link
+ * 2) For the same reason as above, these two modes are added at the end of the config (ensuring subway only operate on link with subway)
+ * 		<parameterset type="transportModeAssignment" >
+ * 			<param name="networkModes" value="subway" />
+ * 			<param name="scheduleMode" value="subway" />
+ * 		</parameterset>
+ * 		<parameterset type="transportModeAssignment" >
+ * 			<param name="networkModes" value="tram" />
+ * 			<param name="scheduleMode" value="tram" />
+ * 		</parameterset>
  *
- * Currently redirects to the only implementation
- * {@link PTMapper}.
  *
- * @author polettif
+ * 	Overall, 4704 transit schdules are generated
  */
-public final class PublicTransitMapper {
+public final class Step3_PublicTransitMapper {
 
-	protected static Logger log = Logger.getLogger(PublicTransitMapper.class);
+	protected static Logger log = Logger.getLogger(Step3_PublicTransitMapper.class);
 
-	private PublicTransitMapper() {
+	private Step3_PublicTransitMapper() {
 	}
 
 	/**

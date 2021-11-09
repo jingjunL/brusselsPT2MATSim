@@ -24,7 +24,7 @@ import org.matsim.core.api.internal.MatsimParameters;
 import org.matsim.core.config.*;
 import org.matsim.core.utils.collections.CollectionUtils;
 import org.matsim.pt.transitSchedule.api.TransitRoute;
-import org.matsim.pt2matsim.run.PublicTransitMapper;
+import org.matsim.pt2matsim.run.Step3_PublicTransitMapper;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -36,7 +36,7 @@ import static org.matsim.pt2matsim.config.PublicTransitMappingConfigGroup.Travel
 
 
 /**
- * Config Group used by {@link PublicTransitMapper}. Defines parameters for
+ * Config Group used by {@link Step3_PublicTransitMapper}. Defines parameters for
  * mapping public transit to a network.
  *
  * @author polettif

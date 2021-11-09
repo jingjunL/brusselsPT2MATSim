@@ -64,13 +64,13 @@ public final class PT2MATSimExample {
 		// create a config file (or adjust an existing one by hand)
 		createOsmConfigFile( inter + "OsmConverterConfig.xml" );
 		// Convert the OSM file using the config
-		Osm2MultimodalNetwork.main(new String[]{ inter + "OsmConverterConfig.xml" });
+		Step1_Osm2MultimodalNetwork.main(new String[]{ inter + "OsmConverterConfig.xml" });
 
 		// 3. Map the schedule onto the network
 		// create a config file (or adjust an existing one by hand)
 		createMapperConfigFile(inter + "MapperConfigAdjusted.xml");
 		// Map the schedule using the config
-		PublicTransitMapper.main(new String[]{inter + "MapperConfigAdjusted.xml"});
+		Step3_PublicTransitMapper.main(new String[]{inter + "MapperConfigAdjusted.xml"});
 
 		// 4. Do a plausibility check
 		checkPlausibility();
@@ -103,7 +103,7 @@ public final class PT2MATSimExample {
 				// [4] output default vehicles file (optional)
 				inter + "vehicles_unmapped.xml",
 		};
-		Gtfs2TransitSchedule.main(gtfsConverterArgs);
+		Step2_Gtfs2TransitSchedule.main(gtfsConverterArgs);
 	}
 
 	/**
@@ -203,7 +203,7 @@ public final class PT2MATSimExample {
 	 * 	checked for plausibility.
 	 */
 	public static void checkPlausibility() {
-		CheckMappedSchedulePlausibility.run(
+		Step4_CheckMappedSchedulePlausibility.run(
 				output + "addison_schedule.xml.gz",
 				output + "addison_multimodalnetwork.xml.gz",
 				addisonCountyEPSG,

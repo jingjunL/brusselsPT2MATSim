@@ -8,7 +8,7 @@ import org.junit.rules.TemporaryFolder;
 import org.matsim.api.core.v01.network.Network;
 import org.matsim.pt.transitSchedule.api.TransitSchedule;
 import org.matsim.pt2matsim.plausibility.log.PlausibilityWarning;
-import org.matsim.pt2matsim.run.CheckMappedSchedulePlausibility;
+import org.matsim.pt2matsim.run.Step4_CheckMappedSchedulePlausibility;
 import org.matsim.pt2matsim.tools.NetworkTools;
 import org.matsim.pt2matsim.tools.NetworkToolsTest;
 import org.matsim.pt2matsim.tools.ScheduleTools;
@@ -65,7 +65,7 @@ public class PlausibilityCheckTest {
 		ScheduleTools.writeTransitSchedule(ScheduleToolsTest.initSchedule(), scheduleFile);
 		NetworkTools.writeNetwork(NetworkToolsTest.initNetwork(), networkFile);
 
-		CheckMappedSchedulePlausibility.run(scheduleFile, networkFile, "Atlantis", outputfolder);
+		Step4_CheckMappedSchedulePlausibility.run(scheduleFile, networkFile, "Atlantis", outputfolder);
 	}
 
 }

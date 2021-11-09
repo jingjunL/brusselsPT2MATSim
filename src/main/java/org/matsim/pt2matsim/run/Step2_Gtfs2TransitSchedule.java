@@ -31,15 +31,15 @@ import java.time.LocalDate;
 import static org.matsim.pt2matsim.gtfs.GtfsConverter.*;
 
 /**
- * Contract class to read GTFS files and convert them to an unmapped MATSim Transit Schedule
- *
- * @author polettif
+ * GTFS files of Brussels in 2020/Jan/27 (workday before Covid) in the folder scenario/BrusselsPublicTransportGTFS20200127
+ * Argument provided:
+ * "C:\Users\jingli\OneDrive - Vrije Universiteit Brussel\Documents\1MATSimNewAll\BrusselsPT2MATSim\scenario\BrusselsPublicTransportGTFS20200127" "dayWithMostTrips" "EPSG:31370" "C:\Users\jingli\OneDrive - Vrije Universiteit Brussel\Documents\1MATSimNewAll\BrusselsPT2MATSim\scenario\transitSchedule\transitSchedule.xml.gz" "C:\Users\jingli\OneDrive - Vrije Universiteit Brussel\Documents\1MATSimNewAll\BrusselsPT2MATSim\scenario\transitSchedule\vehicleFile.xml.gz"
  */
-public final class Gtfs2TransitSchedule {
+public final class Step2_Gtfs2TransitSchedule {
 
-	protected static Logger log = Logger.getLogger(Gtfs2TransitSchedule.class);
+	protected static Logger log = Logger.getLogger(Step2_Gtfs2TransitSchedule.class);
 
-	private Gtfs2TransitSchedule() {
+	private Step2_Gtfs2TransitSchedule() {
 	}
 
 	/**

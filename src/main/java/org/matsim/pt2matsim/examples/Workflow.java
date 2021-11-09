@@ -5,9 +5,9 @@ import org.matsim.pt.transitSchedule.api.TransitSchedule;
 import org.matsim.pt2matsim.config.OsmConverterConfigGroup;
 import org.matsim.pt2matsim.config.PublicTransitMappingConfigGroup;
 import org.matsim.pt2matsim.mapping.PTMapper;
-import org.matsim.pt2matsim.run.CheckMappedSchedulePlausibility;
-import org.matsim.pt2matsim.run.Gtfs2TransitSchedule;
-import org.matsim.pt2matsim.run.Osm2MultimodalNetwork;
+import org.matsim.pt2matsim.run.Step4_CheckMappedSchedulePlausibility;
+import org.matsim.pt2matsim.run.Step2_Gtfs2TransitSchedule;
+import org.matsim.pt2matsim.run.Step1_Osm2MultimodalNetwork;
 import org.matsim.pt2matsim.run.gis.Network2Geojson;
 import org.matsim.pt2matsim.run.gis.Schedule2Geojson;
 import org.matsim.pt2matsim.tools.NetworkTools;
@@ -24,11 +24,11 @@ public class Workflow {
 	public static void main(String[] args) {
 		// Convert Network
 		OsmConverterConfigGroup osmConfig = OsmConverterConfigGroup.loadConfig("osm2matsimConfig.xml");
-		Osm2MultimodalNetwork.run(osmConfig); // or just: Osm2MultimodalNetwork.run("osm2matsimConfig.xml");
+		Step1_Osm2MultimodalNetwork.run(osmConfig); // or just: Osm2MultimodalNetwork.run("osm2matsimConfig.xml");
 
 		// convert schedule
 		String unmappedSchedule = "intermediate/schedule_unmapped.xml.gz";
-		Gtfs2TransitSchedule.run("gtfs", "dayWithMostTrips", osmConfig.getOutputCoordinateSystem(), unmappedSchedule, "output/vehicles.xml.gz");
+		Step2_Gtfs2TransitSchedule.run("gtfs", "dayWithMostTrips", osmConfig.getOutputCoordinateSystem(), unmappedSchedule, "output/vehicles.xml.gz");
 
 		// setup public transit mapper
 		PublicTransitMappingConfigGroup mapperConfig = PublicTransitMappingConfigGroup.createDefaultConfig();
@@ -47,6 +47,6 @@ public class Workflow {
 		Schedule2Geojson.run(osmConfig.getOutputCoordinateSystem(), schedule, "output/schedule.geojson");
 
 		// check schedule
-		CheckMappedSchedulePlausibility.run("output/schedule.xml.gz", "output/network.xml.gz", osmConfig.getOutputCoordinateSystem(), "output/check/");
+		Step4_CheckMappedSchedulePlausibility.run("output/schedule.xml.gz", "output/network.xml.gz", osmConfig.getOutputCoordinateSystem(), "output/check/");
 	}
 }
